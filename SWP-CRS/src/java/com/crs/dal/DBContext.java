@@ -9,7 +9,7 @@ public class DBContext {
     private static final String DB_NAME = "Rental_Car";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_NAME + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Ho_Chi_Minh";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "";
+    private static final String DB_PASSWORD = "123";
     
     protected Connection connection;
     
