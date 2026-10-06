@@ -20,7 +20,7 @@ public class bookingDAO extends DBContext {
                 list.add(mapResultSet(rs));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new IllegalStateException("Failed to load bookings from the database.", e);
         }
         return list;
     }

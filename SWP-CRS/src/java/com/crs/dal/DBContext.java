@@ -17,8 +17,15 @@ public class DBContext {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException(
+                    "MySQL Connector/J is not available to the application. Ensure its JAR is in WEB-INF/lib.",
+                    e);
+        } catch (SQLException e) {
+            throw new IllegalStateException(
+                    "Unable to connect to Rental_Car at localhost:3306. Check that MySQL is running, "
+                    + "the database exists, and the configured credentials are valid.",
+                    e);
         }
     }
     
